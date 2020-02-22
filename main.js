@@ -281,12 +281,15 @@ function moveLeft() {
                         score_tmp += board[i][k];
                         //score_tmp += 1000;
 
-                        timesForReturn += Math.floor(score_tmp / 1000);
-                        $("#times").text(timesForReturn + "次");
+                        if (timesForReturn < 3) {
+                            timesForReturn += Math.floor(score_tmp / 1000);
+                            $("#times").text(timesForReturn + "次");
 
-                        if (Math.floor(score_tmp / 1000) > 0) {
-                            score_tmp = score_tmp % 1000;
+                            if (Math.floor(score_tmp / 1000) > 0) {
+                                score_tmp = score_tmp % 1000;
+                            }
                         }
+
 
                         updateScore(score);
 
@@ -324,11 +327,13 @@ function moveRight() {
                         score += board[i][k];
                         score_tmp += board[i][k];
 
-                        timesForReturn += Math.floor(score_tmp / 1000);
-                        $("#times").text(timesForReturn + "次");
+                        if (timesForReturn < 3) {
+                            timesForReturn += Math.floor(score_tmp / 1000);
+                            $("#times").text(timesForReturn + "次");
 
-                        if (Math.floor(score_tmp / 1000) > 0) {
-                            score_tmp = score_tmp % 1000;
+                            if (Math.floor(score_tmp / 1000) > 0) {
+                                score_tmp = score_tmp % 1000;
+                            }
                         }
                         updateScore(score);
                         hasConflicted[i][k] = true;
@@ -364,11 +369,13 @@ function moveUp() {
                         score += board[k][j];
                         score_tmp += board[k][j];
 
-                        timesForReturn += Math.floor(score_tmp / 1000);
-                        $("#times").text(timesForReturn + "次");
+                        if (timesForReturn < 3) {
+                            timesForReturn += Math.floor(score_tmp / 1000);
+                            $("#times").text(timesForReturn + "次");
 
-                        if (Math.floor(score_tmp / 1000) > 0) {
-                            score_tmp = score_tmp % 1000;
+                            if (Math.floor(score_tmp / 1000) > 0) {
+                                score_tmp = score_tmp % 1000;
+                            }
                         }
                         updateScore(score);
                         hasConflicted[k][j] = true;
@@ -404,11 +411,13 @@ function moveDown() {
                         score += board[k][j];
                         score_tmp += board[k][j];
 
-                        timesForReturn += Math.floor(score_tmp / 1000);
-                        $("#times").text(timesForReturn + "次");
+                        if (timesForReturn < 3) {
+                            timesForReturn += Math.floor(score_tmp / 1000);
+                            $("#times").text(timesForReturn + "次");
 
-                        if (Math.floor(score_tmp / 1000) > 0) {
-                            score_tmp = score_tmp % 1000;
+                            if (Math.floor(score_tmp / 1000) > 0) {
+                                score_tmp = score_tmp % 1000;
+                            }
                         }
                         updateScore(score);
                         hasConflicted[k][j] = true;
