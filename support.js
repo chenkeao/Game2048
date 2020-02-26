@@ -17,19 +17,35 @@ let gridContainerWidth = 0.92 * documentWidth;
 let cellSideLength = 0.18 * documentWidth;
 let cellSpace = 0.04 * documentWidth;
 
+/**
+ * 
+ * @param {number} i 格子的行号
+ * @param {number} j 格子的列号
+ */
 function getPositionTop(i, j) {
     return cellSpace + i * (cellSpace + cellSideLength);
 }
 
-
+/**
+ * 
+ * @param {number} i 格子的行号
+ * @param {number} j 格子的列号
+ */
 function getPositionLeft(i, j) {
     return cellSpace + j * (cellSpace + cellSideLength);
 }
 
+/**
+ * 
+ * @param {number} number 当前DIV的值
+ */
 function getNumberBackgroundColor(number) {
     return colorDic[number]
 }
-
+/**
+ * 
+ * @param {number} num 当前DIV的值
+ */
 function getNumberColor(num) {
     if (num <= 4) {
         return "#776e65";
@@ -37,6 +53,9 @@ function getNumberColor(num) {
     return "#fff";
 }
 
+/**
+ * 判断是否有空格
+ */
 function noSpace() {
     for (let i = 0; i < 4; i++) {
         for (let j = 0; j < 4; j++) {
@@ -48,6 +67,10 @@ function noSpace() {
     return true;
 }
 
+/**
+ * 
+ * @param {object} board 判断是否可以向左移动
+ */
 function canMoveLeft(board) {
     for (let i = 0; i < 4; i++) {
         for (let j = 1; j < 4; j++) {
