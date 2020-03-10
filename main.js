@@ -173,6 +173,9 @@ function goBack() {
     }
 }
 
+/**
+ * 根据数据更新UI
+ */
 function updateBoardView() {
     $(".number-cell").remove();
     for (let i = 0; i < 4; i++) {
